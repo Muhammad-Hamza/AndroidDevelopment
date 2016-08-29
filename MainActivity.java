@@ -26,12 +26,6 @@ public class MainActivity extends AppCompatActivity {
         }
         }
         );
-        mTrueButton=(Button) findViewById(R.id.true_button);
-        mTrueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,R.string.Correct,Toast.LENGTH_SHORT).show();
-            }
-        });
+      
     }
 }
