@@ -4,14 +4,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button mTrueButton;
     private Button mFalseButton;
-    private Button mNextButton;
+    private ImageButton mNextButton;
     private TextView mQuestionTextView ;
+    //private TextView mTextclicker;
+    private ImageButton mPrevButton;
 
 
 
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         }
         }
         );
-        mNextButton=(Button) findViewById(R.id.Next_button);
+        mNextButton=(ImageButton) findViewById(R.id.Next_button);
         mNextButton.setOnClickListener(new View.OnClickListener() {
                                            @Override
                                            public void onClick(View v) {
@@ -90,6 +93,28 @@ public class MainActivity extends AppCompatActivity {
                                            }
                                        }
         );
+        mPrevButton = (ImageButton) findViewById(R.id.Prev_button);
+        mPrevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                    mCurrentIndex = (mCurrentIndex - 1) % mQuestionbank.length;
+
+                updateQuestions();
+            }
+        });
+//Text As an onClickListener
+
+     /*   mTextclicker = (TextView)findViewById(R.id.question_text_view);
+        mTextclicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = (mCurrentIndex+1)%mQuestionbank.length;
+                updateQuestions();
+            }
+        });*/
+
         updateQuestions();
 
     }
