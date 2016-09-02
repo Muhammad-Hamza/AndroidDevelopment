@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-       mQuestionTextView =(TextView)findViewById(R.id.question_text_view);
+     mQuestionTextView =(TextView)findViewById(R.id.question_text_view);
         //int question = mQuestionbank[mCurrentIndex].getTextResid();
         //mQuestionTextView.setText(question);
         mTrueButton=(Button) findViewById(R.id.true_button);
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         }
         }
         );
-        mNextButton=(ImageButton) findViewById(R.id.Next_button);
+       mNextButton=(ImageButton) findViewById(R.id.Next_button);
         mNextButton.setOnClickListener(new View.OnClickListener() {
                                            @Override
                                            public void onClick(View v) {
