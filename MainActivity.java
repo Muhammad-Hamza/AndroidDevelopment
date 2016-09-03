@@ -1,5 +1,6 @@
 package com.example.panacloud.geoquiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,10 +16,13 @@ public class MainActivity extends AppCompatActivity {
     private Button mFalseButton;
     private ImageButton mNextButton;
     private TextView mQuestionTextView ;
+    private Button mCheatButton;
     //private TextView mTextclicker;
     private ImageButton mPrevButton;
   private static final String TAG = "MainActivity";
     private static final String KEY_INDEX = "index";
+    private static final int REQUEST_CODE_CHEAT=0;
+
 
 
     @Override
@@ -161,13 +165,25 @@ public class MainActivity extends AppCompatActivity {
                 updateQuestions();
             }
         });*/
-        if (savedInstanceState != null) {             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);         }
+
+
+
+
+        mCheatButton = (Button) findViewById(R.id.cheat_button);
+        mCheatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              boolean AnswerisTrue = mQuestionbank[mCurrentIndex].isAnswerTrue();
+                Intent i = CheatActivity.newIntent(MainActivity.this,AnswerisTrue);
+                startActivityForResult(i,REQUEST_CODE_CHEAT);
+            }
+        });
+        if (savedInstanceState != null)
+        {
+            mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+        }
 
         updateQuestions();
-
-
-
-
 
 
     }
