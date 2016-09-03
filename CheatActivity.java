@@ -38,6 +38,8 @@ public class CheatActivity extends AppCompatActivity {
     {
 return result.getBooleanExtra(EXTRA_ANSWER_SHOWN,false);
     }
+
+
 //OncreateSTARTS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +65,6 @@ return result.getBooleanExtra(EXTRA_ANSWER_SHOWN,false);
 
             }
         });
-
-
     }
    //OncreateEnds
 }
